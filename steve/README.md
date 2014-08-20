@@ -1,3 +1,4 @@
 ![GeneralAssemb.ly](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/images/ga.png "GeneralAssemb.ly")
 
-#Steve's Class Folder
+Steve's Class Folder
+====================
