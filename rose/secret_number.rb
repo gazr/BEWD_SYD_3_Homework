@@ -56,18 +56,19 @@ while count > 0														## This it the conditional loop giving the player 3
 	puts player_name + ", you have " + "#{count}" + " guesses left before the game is over"
 	puts "What's your guess (a number between 1 and 10)?"
 	player_guess = gets.to_i 										## takes player input and converts it to an integer
-	if player_guess == secret_number 								## If player guesses correct, it tells them they won and ends the game 
+	count -= 1 														## Reduces the number of guesses by 1 each time in order to progressively finish the while loop
+	if player_guess == secret_number 								## If player guesses correct, it tells them they won and ends the game
 		puts "Congratulations " + player_name + "!! You guessed correct! You WIN!!"
 		puts "Well done. I'll have to make my game harder for next time!"
 		count = 0													## Making count = 0 ends the while loop, in order to end the game
 	else															## If player guesses incorrect it takes this path
 	puts "Sorry " + player_name + ", that guess is incorrect!"
-		if count == 1 												## If there are no guesses left it finishes the game and tells them they lost
+		if count == 0 												## If there are no guesses left it finishes the game and tells them they lost
 			puts "Unfortunately " + player_name + " you're out of guesses. You LOST!!"
 			puts "Just to rub it in... The Secret Number was " + "#{secret_number}"
 			puts ":P"
 		else 														## But if there are still guesses left, it gives them a hint for their next guess
-			if player_guess > secret_number 
+			if player_guess > secret_number
 			puts "But here's a hint, you might want to guess a little lower next time..."
 			puts "Ok, lets go again:"
 			end
@@ -76,8 +77,8 @@ while count > 0														## This it the conditional loop giving the player 3
 			puts "Ok, lets go again:"
 			end
 		end
-		count -= 1 													## Reduces the number of guesses by 1 each time in order to progressively finish the while loop
-	end 
+
+	end
 end
 
 
